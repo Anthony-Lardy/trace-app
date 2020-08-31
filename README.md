@@ -1,4 +1,4 @@
-# Anthony Lardy
+# trace-app
 
 ### Dependencies 
 Docker [Install docker](https://docs.docker.com/get-docker/) 
@@ -12,7 +12,7 @@ Clone this project. Then, duplicate .env files in api and front directory. Final
 You can run this commands to install the project : 
 
 ```
-git clone git@bitbucket.org:AnthonyLardy/trace-app.git TraceApp
+git clone git@github.com:Anthony-Lardy/trace-app.git TraceApp
 cd TraceApp
 cp ./api/.env.example ./api/.env
 docker volume create --name=mongodata
