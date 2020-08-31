@@ -1,0 +1,13 @@
+@import "src/app/styles/variables";
+@import "src/app/styles/colors";
+
+.mat-grid-tile {
+  padding-top: 0 !important;
+}
+
+.hightcharts-chart {
+  flex-grow: 3;
+  min-height: 600px;
+  max-width: 600px;
+  display: flex;
+}

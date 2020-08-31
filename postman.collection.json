@@ -1,0 +1,1006 @@
+{
+	"info": {
+		"_postman_id": "73f0784a-2a1a-42ff-bdac-1aef0858ff9a",
+		"name": "Lardy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"anthony.lardy@gmail.com\",\n    \"password\": \"xxx\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/auth/v1/login",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"auth",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh token",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{BEARER_TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}/auth/v1/token",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"auth",
+								"v1",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "List Users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{BEARER_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/users",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit User",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{BEARER_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"toto\",\n    \"lastName\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/users/USR-381196267",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"users",
+								"USR-381196267"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{BEARER_TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"toto\",\n    \"lastName\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/users/USR-381196267",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"users",
+								"USR-381196267"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Anthony\",\n    \"lastName\": \"LARDY\",\n    \"email\": \"anthony.lardy@gmail.com\",\n    \"password\": \"xxx\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/users",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "List students",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{BEARER_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/students?filter=courses:(CRS-803169324|CRS-329646405|CRS-311539728)",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"students"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "courses:(CRS-803169324|CRS-329646405|CRS-311539728)"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit students",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{BEARER_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"toto\",\n    \"lastName\": \"test\",\n    \"courses\": [\"CRS-803169324\", \"CRS-329646405\"],\n    \"groups\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/students/STD-618308438",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"students",
+								"STD-618308438"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete students",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{BEARER_TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"toto\",\n    \"lastName\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/students/STD-618308438",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"students",
+								"STD-618308438"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create student",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{BEARER_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Anthony-6\",\n    \"lastName\": \"LARDY\",\n    \"email\": \"anthony.lardy@gmail.com\",\n    \"course\": \"CRS-803169324\",\n    \"groups\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/students",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"students"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Stat",
+			"item": [
+				{
+					"name": "List stat by course",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{BEARER_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{API_URL}}/core/v1/stats/courses/CRS-803169324",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"stats",
+								"courses",
+								"CRS-803169324"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List stat by group",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{BEARER_TOKEN}}"
+							}
+						],
+						"url": {
+							"raw": "{{API_URL}}/core/v1/stats/groups/GRP-028725795",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"stats",
+								"groups",
+								"GRP-028725795"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Trace",
+			"item": [
+				{
+					"name": "List traces",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{BEARER_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/traces?filter=activity:ACT-098649493",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"traces"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "activity:ACT-098649493"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit trace",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{BEARER_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"courses\": [\"CRS-803169324\", \"CRS-329646405\"],\n    \"groups\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/traces/TRC-618308438",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"traces",
+								"TRC-618308438"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete trace",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{BEARER_TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"toto\",\n    \"lastName\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/traces/TRC-618308438",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"traces",
+								"TRC-618308438"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create trace",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{BEARER_TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"action\": \"tata\",\n    \"source\": \"tutu\",\n    \"payload\": \"{}\",\n    \"student\": \"xxx\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/traces",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"traces"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Groups",
+			"item": [
+				{
+					"name": "List Groups",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{BEARER_TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/groups?filter=name:toto",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"groups"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "name:toto"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Group",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{BEARER_TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"toto\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/groups/GRP-903925232",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"groups",
+								"GRP-903925232"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Group",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{BEARER_TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"toto\",\n    \"lastName\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/groups/GRP-903925232",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"groups",
+								"GRP-903925232"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Group",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{BEARER_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Group 3\",\n    \"course\": \"CRS-311539728\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/groups",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"groups"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Activities",
+			"item": [
+				{
+					"name": "List activities",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{BEARER_TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/activities?filter=-has:type",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"activities"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "-has:type"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit activities",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{BEARER_TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"toto\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/activities/ACT-048875926",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"activities",
+								"ACT-048875926"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete activities",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{BEARER_TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"toto\",\n    \"lastName\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/activities/ACT-048875926",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"activities",
+								"ACT-048875926"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create activities",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{BEARER_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Group 3\",\n    \"course\": \"CRS-311539728\",\n    \"type\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/activities",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"activities"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Courses",
+			"item": [
+				{
+					"name": "List courses",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{BEARER_TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/courses",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit course",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{BEARER_TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"toto\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/courses/CRS-803169324",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"courses",
+								"CRS-803169324"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete course",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{BEARER_TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"toto\",\n    \"lastName\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/groups/CRS-803169324",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"groups",
+								"CRS-803169324"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create course",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{BEARER_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Cours 3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/core/v1/courses",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

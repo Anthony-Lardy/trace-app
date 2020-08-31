@@ -1,0 +1,22 @@
+<div class="matero-row" fxLayout="row wrap">
+
+  <h1 fxFlex="100" style="margin-left:18px">
+    Bienvenue sur la page de suivi du Course id : {{ courseId }}
+  </h1>
+  <mat-card fxFlex.gt-sm="100">
+    <mat-card-subtitle>Engagement</mat-card-subtitle>
+    <mat-grid-list cols="2" rowHeight="2:1">
+      <highcharts-chart [Highcharts]="Highcharts" [options]="option1" class='hightcharts-chart'></highcharts-chart>
+      <highcharts-chart [Highcharts]="Highcharts" [options]="option2" class='hightcharts-chart'></highcharts-chart>
+      <highcharts-chart [Highcharts]="Highcharts" [options]="option3" class='hightcharts-chart'></highcharts-chart>
+      <highcharts-chart [Highcharts]="Highcharts" [options]="option4" class='hightcharts-chart'></highcharts-chart>
+    </mat-grid-list>
+  </mat-card>
+  <mat-card fxFlex="60" fxFlex.gt-sm="100">
+    <mat-card-subtitle>Evaluation</mat-card-subtitle>
+    <mat-grid-list cols="2" rowHeight="2:1">
+      <highcharts-chart [Highcharts]="Highcharts" [options]="option5" class='hightcharts-chart'></highcharts-chart>
+      <highcharts-chart [Highcharts]="Highcharts" [options]="option6" class='hightcharts-chart'></highcharts-chart>
+    </mat-grid-list>
+  </mat-card>
+</div>

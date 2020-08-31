@@ -1,0 +1,5 @@
+<mat-list>
+      <mat-list-item routerLink="/suivi/general/" *ngFor="let student of students | async">
+        {{student.firstName}} {{student.lastName}}
+      </mat-list-item>
+</mat-list>

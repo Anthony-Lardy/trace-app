@@ -1,0 +1,39 @@
+<div class="w-full h-full" fxLayout="row wrap">
+  <mat-card class="mat-elevation-z4 m-auto" style="max-width: 380px;">
+    <mat-card-title class="text-center m-b-24">
+      Trace App
+    </mat-card-title>
+
+    <form class="form-field-full" [formGroup]="loginForm">
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="trace-app" formControlName="username" required>
+        <mat-error *ngIf="username.invalid">
+          Email invalid
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>
+          Password
+        </mat-label>
+        <input matInput placeholder="trace-app" type="password" formControlName="password" required>
+        <mat-error *ngIf="password.invalid">
+          Password invalid
+        </mat-error>
+      </mat-form-field>
+
+      <button class="w-full" mat-raised-button color="primary" [disabled]="loginForm.invalid" (click)="login()">
+        Submit
+      </button>
+
+      <div class="m-t-16">Have no account ? 
+        <a routerLink="/auth/register">
+        Create an account here
+      </a>
+      </div>
+    </form>
+
+  </mat-card>
+</div>

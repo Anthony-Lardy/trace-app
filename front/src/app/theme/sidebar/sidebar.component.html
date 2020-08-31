@@ -1,0 +1,28 @@
+<mat-list>
+  <span *ngFor="let course of courses">
+    <span *ngIf="course.groups && course.groups.length > 0">
+      <mat-accordion class='mat-elevation-z0'>
+        <mat-expansion-panel class='mat-elevation-z0'>
+          <mat-expansion-panel-header>
+            <mat-panel-title class='sidebar-accordion-title'>
+              {{course.name}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list-item [routerLink]="['/suivi', course.id]">
+            {{course.name}}
+          </mat-list-item>
+          <span *ngFor="let group of course.groups">
+            <mat-list-item [routerLink]="['/suivi', group.id]">
+              {{group.name}}
+            </mat-list-item>
+          </span>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </span>
+    <span *ngIf="!course.groups || course.groups.length === 0">
+      <mat-list-item [routerLink]="['/suivi', course.id]">
+        {{course.name}}
+      </mat-list-item>
+    </span>
+  </span>
+</mat-list>

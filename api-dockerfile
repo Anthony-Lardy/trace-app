@@ -1,0 +1,7 @@
+FROM node:latest
+
+WORKDIR /home/www
+
+COPY ./api/package*.json ./
+
+RUN npm install -g env-cmd

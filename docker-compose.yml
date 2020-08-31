@@ -1,0 +1,45 @@
+version: "3"
+services:
+
+  mongo:
+      image: mongo:latest
+      container_name: mongo
+      volumes:
+        - mongodata:/data/db
+      environment:
+        - MONGO_INITDB_ROOT_USERNAME=root
+        - MONGO_INITDB_ROOT_PASSWORD=rootpwd
+      ports:
+          - 27017:27017
+
+  api:
+      build:
+        context: ./
+        dockerfile: ./api-dockerfile
+      container_name: api
+      volumes:
+        - ./api:/home/www
+      working_dir: /home/www
+      links: 
+        - mongo
+      ports:
+        - 4400:4400
+      command: npm run dev
+
+  front:
+      build:
+        context: ./
+        dockerfile: ./front-dockerfile
+      container_name: front
+      volumes:
+        - ./front:/home/www
+      working_dir: /home/www
+      links: 
+        - api
+      ports:
+        - 4200:4200
+      command: npm start
+
+volumes:
+  mongodata:
+    external: true

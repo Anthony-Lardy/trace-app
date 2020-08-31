@@ -1,0 +1,35 @@
+{
+  "menu": [{
+      "route": "demo/dashboard",
+      "name": "dashboard",
+      "type": "link",
+      "icon": "dashboard",
+      "badge": {
+        "color": "red-500",
+        "value": "5"
+      }
+    },
+    {
+      "route": "demo/sessions",
+      "name": "sessions",
+      "type": "sub",
+      "icon": "question_answer",
+      "children": [{
+          "route": "demo/403",
+          "name": "403",
+          "type": "link"
+        },
+        {
+          "route": "demo/404",
+          "name": "404",
+          "type": "link"
+        },
+        {
+          "route": "demo/500",
+          "name": "500",
+          "type": "link"
+        }
+      ]
+    }
+  ]
+}

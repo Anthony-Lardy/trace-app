@@ -1,0 +1,23 @@
+<mat-toolbar-row class="courses-layout__row">
+  <button class="courses-layout__title-button" mat-icon-button color="primary" (click)="toggleLeftMenu()">
+    <mat-icon *ngIf="!isLeftMenuOpened" class="courses-layout__title-button-icon">menu</mat-icon>
+    <mat-icon *ngIf="isLeftMenuOpened" class="courses-layout__title-button-icon">arrow_back</mat-icon>
+  </button>
+  <app-courses-header class="courses-layout__row__subheader"></app-courses-header>
+  <button class="courses-layout__title-button" mat-icon-button color="primary" (click)="toggleRightMenu()">
+    <mat-icon *ngIf="!isRightMenuOpened" class="courses-layout__title-button-icon">menu</mat-icon>
+    <mat-icon *ngIf="isRightMenuOpened" class="courses-layout__title-button-icon">arrow_forward</mat-icon>
+  </button>
+</mat-toolbar-row>
+<mat-sidenav-container class="courses-layout__container">
+  <mat-sidenav mode="side" class="courses-layout__sidebar" [fixedInViewport]="false" [(opened)]="isLeftMenuOpened">
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+  <mat-sidenav-content class="courses-layout__content" style="height: calc(100% - 128px)">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+  <mat-sidenav mode="side" position="end" class="courses-layout__sidebar" [fixedInViewport]="false"
+    [(opened)]="isRightMenuOpened">
+    <app-student-sidebar></app-student-sidebar>
+  </mat-sidenav>
+</mat-sidenav-container>

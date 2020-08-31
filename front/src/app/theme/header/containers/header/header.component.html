@@ -1,0 +1,14 @@
+<mat-toolbar class="header mat-elevation-z2">
+  <mat-toolbar-row class="header__row">
+    <div class="header__title">
+      <button mat-button *ngIf="settings.courses[0].id" [routerLink]="['/suivi', settings.courses[0].id]" >Suivi</button>
+      <button mat-button routerLink="/profils">Profils</button>
+      <button mat-button>Base indicateur</button>
+    </div>
+
+    <div class="header-toolbar">
+      <app-user [user]="user$ | async" (signOut)="signOut()"></app-user>
+    </div>
+  </mat-toolbar-row>
+
+</mat-toolbar>

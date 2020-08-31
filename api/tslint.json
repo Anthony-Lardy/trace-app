@@ -1,0 +1,57 @@
+{
+    "extends": [
+        "tslint-consistent-codestyle"
+    ],
+    "rules": {
+        "member-access": true,
+        "no-unnecessary-type-assertion": true,
+        "await-promise": true,
+        "prefer-readonly": true,
+        "no-default-export": true,
+        "triple-equals": true,
+        "no-string-throw": true,
+        "no-unsafe-finally": true,
+        "no-unused-expression": true,
+        "no-parameter-reassignment": false,
+        "max-file-line-count": [
+            true,
+            330
+        ],
+        "max-classes-per-file": [
+            true,
+            1
+        ],
+        "no-consecutive-blank-lines": true,
+        "ordered-imports": true,
+        "import-spacing": true,
+        "member-ordering": [
+            true,
+            {
+                "order": [
+                    "public-static-field",
+                    "private-static-field",
+                    "public-instance-field",
+                    "private-instance-field",
+                    "public-constructor",
+                    "private-constructor",
+                    "public-instance-method",
+                    "protected-instance-method",
+                    "private-instance-method"
+                ]
+            }
+        ],
+        "no-else-after-return": true,
+        "no-unnecessary-else": true,
+        "no-unused": true,
+        "early-exit": true,
+        "parameter-properties": [
+            true,
+            "all-or-none",
+            "member-access",
+            "readonly"
+        ],
+        "no-any": false,
+        "no-unsafe-any": false
+
+    }
+}

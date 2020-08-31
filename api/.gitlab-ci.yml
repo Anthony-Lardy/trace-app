@@ -1,0 +1,25 @@
+stages:
+  - test
+
+variables:
+  MONGO_INITDB_ROOT_USERNAME: "root"
+  MONGO_INITDB_ROOT_PASSWORD: "root"
+
+services:
+  - name: mongo:4.2.2
+
+cache:
+  key: build-cache
+  paths:
+    - node_modules
+  
+before_script:
+  - npm ci
+  - npm run build
+  - npm run lint
+
+test:
+  stage: test
+  script:
+    - cp .env.gitlab .env
+    - npm run test:ci

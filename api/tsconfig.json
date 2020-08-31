@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+        "baseUrl": "src",
+        "target": "ES2017",
+        "lib": ["esnext.array", "es2018", "dom"],
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "declaration": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "sourceMap": true,
+        "pretty": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "noImplicitReturns": true,
+        "noEmitOnError": true,
+        "noUnusedLocals": true,
+        "strictNullChecks": true,
+        "alwaysStrict": true,
+        "outDir": "dist/",
+        "checkJs": false,
+        "noFallthroughCasesInSwitch": true,
+        "paths": {
+            "@authorization/*": ["./authorization/*"],
+            "@core/*": ["./core/*"],
+            "@lib/*": ["./lib/*"],
+            "@common/*": ["./common/*"],
+            "@/*": ["./*"]
+        }
+    },
+    "include": [
+        "src/**/*.ts",
+        "tests/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

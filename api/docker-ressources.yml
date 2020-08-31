@@ -1,0 +1,5 @@
+image: mongo
+tag: 4.2
+---
+image: redis
+tag: latest

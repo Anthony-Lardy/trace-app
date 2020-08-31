@@ -1,0 +1,37 @@
+{
+  "name": "trace-app",
+  "version": "10.0.2",
+  "description": "Angular Material Admin Dashboard",
+  "author": "nzbin<nzb329@163.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trace-app/trace-app.git"
+  },
+  "keywords": [
+    "angular",
+    "angular-material",
+    "admin-dashboard",
+    "trace-app",
+    "ng-admin",
+    "ngx-admin",
+    "responsive",
+    "schematics",
+    "material-extensions"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trace-app/trace-app/issues"
+  },
+  "homepage": "https://trace-app.github.io/trace-app/",
+  "scripts": {
+    "build": "../node_modules/.bin/tsc -p tsconfig.json"
+  },
+  "schematics": "./collection.json",
+  "ng-update": {
+    "migrations": "./migration.json",
+    "packageGroup": [
+      "trace-app"
+    ]
+  },
+  "sideEffects": false
+}

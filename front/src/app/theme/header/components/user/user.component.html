@@ -1,0 +1,13 @@
+<button class="user-button" mat-mini-fab [matMenuTriggerFor]="userMenu">
+  <mat-icon class="user-button__icon">person</mat-icon>
+</button>
+<mat-menu #userMenu="matMenu" xPosition="before">
+  <button mat-menu-item class="user-menu__item-title">
+    Profile
+  </button>
+  <div class="sign-button-wrapper">
+    <button class="sign-button" mat-flat-button (click)="signOutEmit()">
+      Déconnexion
+    </button>
+  </div>
+</mat-menu>
